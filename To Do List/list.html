@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <title>To Do List</title>
+</head>
+
+<body>
+  <style>
+    html {
+      background: url('./garden.jpeg');
+    }
+
+    .inbox {
+      max-width: 800px;
+      margin: 50px auto;
+      background: white;
+    }
+
+    .item {
+      display: flex;
+      /*flex是為了適應不同螢幕尺寸和顯示設備而生的佈局模式*/
+      align-items: center;
+      border-bottom: 1px solid #ac2525;
+      /*solid是實線 */
+    }
+
+    /* :checked 匹配任意被勾选/选中的radio(单选按钮),checkbox,或者option(select中的一项) */
+    /*:checked+p -> 對checked的下面的p做改變*/
+    input:checked+p {
+      background: #f3ea72;
+      text-decoration: line-through;
+    }
+
+    input[type="checkbox"] {
+      margin: 20px;
+    }
+
+    p {
+      margin: 0;
+      padding: 25px;
+      flex: 1;
+      font-family: "cwTeXYen", "FangSong", Arial, serif;
+      font-size: 20px;
+      font-weight: 200;
+      border-left: 1px solid #ac2525;
+    }
+  </style>
+
+  <div class="inbox">
+    <div class="item">
+      <input type="checkbox" onclick="showMsg(this)">
+      <p>運動30分鐘</p>
+    </div>
+    <div class="item">
+      <input type="checkbox" onclick="showMsg(this)">
+      <p>喝2000cc的水</p>
+    </div>
+    <div class="item">
+      <input type="checkbox" onclick="showMsg(this)">
+      <p>leetcode練習</p>
+    </div>
+    <div class="item">
+      <input type="checkbox" onclick="showMsg(this)">
+      <p>討論專題、修改專題</p>
+    </div>
+    <div class="item">
+      <input type="checkbox" onclick="showMsg(this)">
+      <p>聽力練習</p>
+    </div>
+    <div class="item">
+      <input type="checkbox" onclick="showMsg(this)">
+      <p>整理房間</p>
+    </div>
+    <div class="item">
+      <input type="checkbox" onclick="showMsg(this)">
+      <p>洗衣服</p>
+    </div>
+    <div class="item">
+      <input type="checkbox" onclick="showMsg(this)">
+      <p>倒垃圾</p>
+    </div>
+    <div class="item">
+      <input type="checkbox" onclick="showMsg(this)">
+      <p>口說練習</p>
+    </div>
+  </div>
+
+  <script>
+
+    function showMsg(Check) {
+      if (Check.checked == true) {
+        alert('恭喜完成!!今天也很努力喔!');
+      }
+      else if (Check.checked == false) {
+        alert('加油！趕緊完成');
+      }
+    }
+
+
+  </script>
+
+</body>
+
+</html>
